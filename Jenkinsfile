@@ -27,7 +27,6 @@ pipeline {
                     sh 'docker build -t imas10/devops-integration .'
                 }
             }
-        }
         
         stage('Push image to Hub'){
             steps{
