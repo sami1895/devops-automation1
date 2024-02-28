@@ -18,6 +18,8 @@
     # Make sure to change the image name with your personal dockerhub account and reposiroty 
     command: docker build -t devops-integration1-img .
 
+  - name: tag the docker image
+    command: docker tag devops-integration1 imas10/devops-integration:0.0.02
   
   - name: push image to dockerhub
     # Make sure to change the image name with your personal dockerhub account and reposiroty 
