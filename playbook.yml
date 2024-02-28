@@ -17,8 +17,9 @@
   - name: build docker image from dockerfile
     # Make sure to change the image name with your personal dockerhub account and reposiroty 
     command: docker build -t devops-integration1-img .
+
   
   - name: push image to dockerhub
     # Make sure to change the image name with your personal dockerhub account and reposiroty 
-    command: docker push devops-integration:0.0.02
+    command: docker push imas10/devops-integration:0.0.02
 
