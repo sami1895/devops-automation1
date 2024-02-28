@@ -23,7 +23,6 @@ pipeline {
          stage('Build & push Dockerfile') {
             steps {
               sh """
-              cd devops-automation1/
               ansible-playbook playbook.yml
               """
             }
