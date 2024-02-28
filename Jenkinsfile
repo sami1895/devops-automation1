@@ -32,14 +32,9 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u imas10 -p ${dockerhub}'
-
-}
-                   sh 'docker push imas10/devops-integration'
+                   sh 'docker push imas10/devops-integration:1.0'
                 }
             }
-        }
         stage('Deploy to k8s'){
             steps{
                 script{
