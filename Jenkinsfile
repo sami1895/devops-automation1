@@ -20,20 +20,14 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-           
-        stage('Build docker image'){
-            steps{
-                script{
-                    sh 'docker build -t imas10/devops-integration .'
-                }
+         stage('Build & push Dockerfile') {
+            steps {
+              sh """
+              cd devops-automation1/
+              ansible-playbook playbook.yml
+              """
             }
-        
-        stage('Push image to Hub'){
-            steps{
-                script{
-                   sh 'docker push imas10/devops-integration:1.0'
-                }
-            }
+        }   
         stage('Deploy to k8s'){
             steps{
                 script{
